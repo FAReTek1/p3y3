@@ -12,12 +12,12 @@ def decode(text: str) -> str:
     Equivalent to:
     ```
     def decode(text: str) -> str:
-    ret = ''
-    for char in text:
-        i = ord(char)
-        i -= 0xe0000 if 0xe0000 < i < 0xe007f else 0
-        ret += chr(i)
-    return ret
+        ret = ''
+        for char in text:
+            i = ord(char)
+            i -= 0xe0000 if 0xe0000 < i < 0xe007f else 0
+            ret += chr(i)
+        return ret
     ```
     """
 
@@ -30,12 +30,12 @@ def encode(text: str) -> str:
     Equivalent to:
     ```
     def encode(text: str) -> str:
-    ret = ''
-    for char in text:
-        i = ord(char)
-        i += 0xe0000 if 0x00 < i < 0x7f else 0
-        ret += chr(i)
-    return ret
+        ret = ''
+        for char in text:
+            i = ord(char)
+            i += 0xe0000 if 0x00 < i < 0x7f else 0
+            ret += chr(i)
+        return ret
     ```
     """
 
